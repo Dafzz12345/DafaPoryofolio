@@ -1,25 +1,183 @@
-<nav class="navbar">
-    <a href="https://saweria.co/dafapratamasaweria" target="_blank" class="saweria-btn">
-        <i class="fas fa-crown"></i> Saweria
-    </a>
-    <button class="menu-toggle" id="open-faq">
-        <i class="fas fa-bars"></i>
-    </button>
-</nav>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dafa Official | Social Link Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #1a1a2e;
+            --light: #f5f6fa;
+            --whatsapp: #25D366;
+            --youtube: #FF0000;
+            --neon: #00d2ff;
+        }
 
-<div class="faq-overlay" id="faq-modal">
-    <div class="faq-content">
-        <h2 style="margin-bottom: 20px; color: white;">F.A.Q</h2>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         
-        <div class="faq-item">
-            <h3>Mau tanya-tanya lebih lanjut?</h3>
-            <p>Silakan hubungi nomor pribadi saya untuk keperluan kerja sama atau hal penting lainnya.</p>
-        </div>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--light);
+            overflow-x: hidden;
+        }
 
-        <a href="https://wa.me/62895393325895" class="social-link whatsapp" style="width: 100%;">
-            <i class="fab fa-whatsapp"></i> Chat Nomor Pribadi
+        /* Navbar & Saweria */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .saweria-btn {
+            background: #ffd600;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 0 15px rgba(255, 214, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .menu-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        .social-links { display: flex; flex-direction: column; gap: 12px; margin-top: 25px; }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .social-link:hover { transform: translateY(-3px); background: var(--primary); }
+
+        /* FAQ Overlay */
+        #faq-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .faq-box {
+            background: #23233b;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 100%;
+            border: 1px solid var(--primary);
+        }
+
+        .close-btn {
+            background: var(--youtube);
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="https://saweria.co/dafapratamasaweria" target="_blank" class="saweria-btn">
+            <i class="fas fa-crown"></i> Saweria
         </a>
+        <button class="menu-toggle" id="btn-faq">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
 
-        <button class="close-faq" id="close-faq">Tutup</button>
+    <div class="profile-card">
+        <img src="https://files.catbox.moe/on4w6h.jpg" class="profile-img">
+        <h1 style="font-size: 24px;">Dafa Official</h1>
+        <p style="opacity: 0.7;">Digital Architect | Beginner Developer</p>
+        
+        <div class="social-links">
+            <a href="https://github.com/Dafzz12345" class="social-link"><i class="fab fa-github" style="margin-right:10px"></i> GitHub</a>
+            <a href="https://instagram.com/dafapratama950" class="social-link"><i class="fab fa-instagram" style="margin-right:10px"></i> Instagram</a>
+            <a href="https://wa.me/62895393325895" class="social-link"><i class="fab fa-whatsapp" style="margin-right:10px"></i> WhatsApp Pribadi</a>
+        </div>
     </div>
-</div>
+
+    <div id="faq-overlay">
+        <div class="faq-box">
+            <h2>F.A.Q</h2>
+            <hr style="margin: 15px 0; opacity: 0.2;">
+            <p><strong>Mau tanya-tanya lebih lanjut?</strong></p>
+            <p style="font-size: 14px; opacity: 0.8; margin-bottom: 20px;">Silakan hubungi nomor pribadi saya di bawah ini:</p>
+            <a href="https://wa.me/62895393325895" class="social-link" style="background: #25D366;">Chat Nomor Pribadi</a>
+            <button class="close-btn" id="btn-close">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        const btnFaq = document.getElementById('btn-faq');
+        const btnClose = document.getElementById('btn-close');
+        const overlay = document.getElementById('faq-overlay');
+
+        btnFaq.onclick = () => overlay.style.display = 'flex';
+        btnClose.onclick = () => overlay.style.display = 'none';
+        window.onclick = (e) => { if(e.target == overlay) overlay.style.display = 'none'; }
+    </script>
+</body>
+</html>
